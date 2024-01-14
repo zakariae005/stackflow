@@ -1,8 +1,12 @@
+/* eslint-disable camelcase */
 import { ClerkProvider } from "@clerk/nextjs";
-import "./globals.css";
 import React from "react";
-import {Inter, Space_Grotesk} from 'next/font/google'
+import { Inter, Space_Grotesk } from "next/font/google";
 import { Metadata } from "next";
+
+import "./globals.css";
+import "../styles/prism.css"
+import { ThemeProvider } from "@/context/ThemeProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,12 +21,14 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "StackFlow",
-  description: "A cummunity-driven plateform for asking and answring programming questions.",
+  title: "FlowDev",
+  description:
+    "A cummunity-driven plateform for asking and answring programming questions.",
   icons: {
     icon: "/assets/images/site-logo.svg",
   },
-}
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -39,7 +45,7 @@ export default function RootLayout({
             },
           }}
         >
-          {children}
+          <ThemeProvider>{children}</ThemeProvider>
         </ClerkProvider>
       </body>
     </html>
