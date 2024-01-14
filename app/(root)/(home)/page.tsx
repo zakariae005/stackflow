@@ -36,7 +36,7 @@ export default async function Home() {
       </div>
       <HomeFilters />
       <div>
-        {result?.questions.length > 0 ? (
+      {result && result.questions && result.questions.length > 0 ? (
           result?.questions.map((question) => (
             <QuestionCard 
             key={question._id}
