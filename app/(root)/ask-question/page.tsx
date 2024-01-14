@@ -1,6 +1,5 @@
 "use client";
 import Question from "@/components/forms/Question";
-
 import React from "react";
 
 const page = async () => {
